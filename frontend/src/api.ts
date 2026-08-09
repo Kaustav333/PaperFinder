@@ -19,7 +19,7 @@ export interface SearchResponse {
 }
 
 export async function searchPapers(query: string): Promise<SearchResponse> {
-  const res = await fetch(`http://127.0.0.1:8000/api/search?q=${encodeURIComponent(query)}`);
+  const res = await fetch(`https://paperfinder-uks4.onrender.com/api/search?q=${encodeURIComponent(query)}`);
   if (!res.ok) {
     throw new Error('Search request failed');
   }
