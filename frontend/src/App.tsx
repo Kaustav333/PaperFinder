@@ -56,7 +56,9 @@ function App() {
     <div className="min-h-screen pb-20">
       <header className={`transition-all duration-500 ease-in-out flex flex-col items-center justify-center ${papers.length > 0 || isLoading || error ? 'pt-12 pb-8' : 'h-[80vh]'}`}>
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-neutral-900 tracking-tight mb-3">PaperFind</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-neutral-900 tracking-tight mb-3">
+            PaperFind <span className="text-2xl text-neutral-400 font-sans font-light">by Kaustav</span>
+          </h1>
           <p className="text-neutral-500 font-sans text-lg">A minimal research search engine</p>
         </div>
         
