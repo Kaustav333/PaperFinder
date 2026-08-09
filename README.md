@@ -1,5 +1,7 @@
 # PaperFind
 
+🚀 **Live Demo:** [https://paper-finder-alpha.vercel.app](https://paper-finder-alpha.vercel.app)
+
 A full-stack, polished research paper search engine that aggregates results from Semantic Scholar, OpenAlex, and arXiv.
 
 ## Features
