@@ -15,7 +15,7 @@ async def fetch_semantic_scholar(query: str) -> List[Paper]:
     }
     
     try:
-        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        async with httpx.AsyncClient(timeout=TIMEOUT, follow_redirects=True) as client:
             response = await client.get(url, params=params)
             response.raise_for_status()
             data = response.json()
@@ -70,7 +70,7 @@ async def fetch_openalex(query: str) -> List[Paper]:
         return " ".join(words).strip()
 
     try:
-        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        async with httpx.AsyncClient(timeout=TIMEOUT, follow_redirects=True) as client:
             response = await client.get(url, params=params)
             response.raise_for_status()
             data = response.json()
@@ -119,7 +119,7 @@ async def fetch_openalex(query: str) -> List[Paper]:
         return []
 
 async def fetch_arxiv(query: str) -> List[Paper]:
-    url = "http://export.arxiv.org/api/query"
+    url = "https://export.arxiv.org/api/query"
     params = {
         "search_query": f"all:{query}",
         "start": 0,
@@ -127,7 +127,7 @@ async def fetch_arxiv(query: str) -> List[Paper]:
     }
     
     try:
-        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        async with httpx.AsyncClient(timeout=TIMEOUT, follow_redirects=True) as client:
             response = await client.get(url, params=params)
             response.raise_for_status()
             
