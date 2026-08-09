@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Download, ExternalLink, Quote } from 'lucide-react';
 import { Paper } from '../api';
 
